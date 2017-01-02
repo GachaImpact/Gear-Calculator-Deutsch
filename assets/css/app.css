@@ -29,8 +29,8 @@ h1 {
     background: rgba(255, 255, 255, 0.25);
 }
 .class_icon {
-    height: 80px;
-    width: 80px;
+    height: 90px;
+    width: 90px;
     padding: 20px;
     transition: opacity 1s;
 }
