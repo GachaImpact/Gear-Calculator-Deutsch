@@ -8,14 +8,15 @@ KominoStyle Hinzugefügt
 body {
     font-size: 12pt;
     /*font-family: Comic Sans MS;*/
-    text-shadow: 0px 0px 1px rgba(217, 40, 49, 1), 0px 0px 17px rgba(217, 40, 49, 1), 0px 0px 3px rgba(217, 40, 49, 1), 0px 0px 4px rgba(217, 40, 49, 1), 0px 0px 5px rgba(217, 40, 49, 1), 0px 0px 6px rgba(217, 40, 49, 1);
+    color: #FFF;
     background: url(https://i.ytimg.com/vi/VYrbrMm5M3Y/maxresdefault.jpg) no-repeat fixed;
     background-size: cover;
-	margin-bottom: 50px;
+    margin-bottom: 50px;
 }
 h1 {
     font-family: Comic Sans MS;
-	color: #ff4900;
+	text-shadow: 0px 0px 1px rgba(217, 40, 49, 1), 0px 0px 17px rgba(217, 40, 49, 1), 0px 0px 3px rgba(217, 40, 49, 1), 0px 0px 4px rgba(217, 40, 49, 1), 0px 0px 5px rgba(217, 40, 49, 1), 0px 0px 6px rgba(217, 40, 49, 1);
+
 }
 .container{
 	width: 1500px;
