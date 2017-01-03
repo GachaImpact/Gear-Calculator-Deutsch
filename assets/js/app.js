@@ -834,7 +834,7 @@
                 }
                 
                 // If searching, input isn't blank and the search wasn't matched in the items name, then skip the item
-                if (search !== "Suchen" && key.toLowerCase().indexOf(search) == -1) {
+                if (search !== "" && key.toLowerCase().indexOf(search) == -1) {
                     continue;
                 }
                 if (!rarityFilters[items_list[key].rarity]) {
