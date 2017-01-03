@@ -269,11 +269,11 @@
     function resetGearslotItem(item_type, item_no) {
         $("#equipment .gear-slot[data-type='" + item_type + "']" + (typeof item_no === 'undefined' ? '' : "[data-item='" + item_no + "']")).attr({
             'style': '',
-            'title': "Leer"
+            'title': "Empty"
         }).empty().tooltip('fixTitle');
         $('#equipment .gem-slot.' + item_type + '1, .gem-slot.' + item_type + '2').attr({
             'style': '',
-            'title': "Leer"
+            'title': "Empty"
         }).tooltip('fixTitle').hide();
     }
 
@@ -396,11 +396,11 @@
         }
 
         // item choose button
-        item_element.append('<button class="btn btn-sm btn-primary item-choose" data-item="' + key + '" data-itemset="gems" data-type="' + item_type + '" data-itemno="' + item_no + '">Auswählen</button>');
+        item_element.append('<button class="btn btn-sm btn-primary item-choose" data-item="' + key + '" data-itemset="gems" data-type="' + item_type + '" data-itemno="' + item_no + '">Choose</button>');
 
         // item effects
         stat_element = $('<div class="item-effects"/>');
-        stat_element.append('<strong>Item Effekt</strong>');
+        stat_element.append('<strong>Item Effects</strong>');
 
         if (Object.keys(item.item_effects).length > 0) {
             for (var stat_key in item.item_effects) {
@@ -415,7 +415,7 @@
                 }
             }
         } else {
-            stat_element.append('<div>Keins!</div>');
+            stat_element.append('<div>None.</div>');
         }
 
         stat_element.appendTo(item_element);
@@ -423,7 +423,7 @@
         // incompatible
         if (item.incompatible.length > 0) {
             stat_element = $('<div class="item-effects"/>');
-            stat_element.append('<strong>Es stackt nicht mit:</strong>');
+            stat_element.append('<strong>It doesn\'t stack with:</strong>');
 
             for (var i = item.incompatible.length - 1; i >= 0; i--) {
                 stat_element.append('<div>' + item.incompatible[i] + '</div>');
@@ -482,28 +482,28 @@
         stat_element = $('<div class="item-stats"/>');
 
         if (typeof item.ap !== 'undefined') {
-            stat_element.append('<div>AK: ' + BDOcalculator.getItemStat(item, "ap", false, enhancement_level) + '</div>');
+            stat_element.append('<div>AP: ' + BDOcalculator.getItemStat(item, "ap", false, enhancement_level) + '</div>');
         }
         if (typeof item.ap_min !== 'undefined') {
-            stat_element.append('<div>AK: ' + BDOcalculator.getItemStat(item, "ap_min", false, enhancement_level) + '~' + BDOcalculator.getItemStat(item, "ap_max", false, enhancement_level) + '</div>');
+            stat_element.append('<div>AP: ' + BDOcalculator.getItemStat(item, "ap_min", false, enhancement_level) + '~' + BDOcalculator.getItemStat(item, "ap_max", false, enhancement_level) + '</div>');
         }
         if (typeof item.dp !== 'undefined') {
-            stat_element.append('<div>VK: ' + BDOcalculator.getItemStat(item, "dp", false, enhancement_level) + '</div>');
+            stat_element.append('<div>DP: ' + BDOcalculator.getItemStat(item, "dp", false, enhancement_level) + '</div>');
         }
         stat_element.appendTo(item_element);
 
         // item choose button
-        item_element.append('<button class="btn btn-sm btn-primary item-choose" data-enh="' + enhancement_level + '" data-item="' + key + '" data-itemset="' + item_itemset + '" data-type="' + item_type + '" data-itemno="' + item_no + '">Auswählen</button>');
+        item_element.append('<button class="btn btn-sm btn-primary item-choose" data-enh="' + enhancement_level + '" data-item="' + key + '" data-itemset="' + item_itemset + '" data-type="' + item_type + '" data-itemno="' + item_no + '">Choose</button>');
 
         // item gems
         item_element.append('<div class="item-gems">'+
-                                '<strong>Kristall slots:</strong>'+
+                                '<strong>Gem Slots:</strong>'+
                                 '<div>' + item.gems + '</div>'+
                             '</div>');
 
         // item effects
         stat_element = $('<div class="item-effects"/>');
-        stat_element.append('<strong>Gegenstands Effekt</strong>');
+        stat_element.append('<strong>Item Effects</strong>');
 
         if (Object.keys(item.item_effects).length > 0) {
             for (var stat_key in item.item_effects) {
@@ -518,14 +518,14 @@
                 }
             }
         } else {
-            stat_element.append('<div>Keins!</div>');
+            stat_element.append('<div>None.</div>');
         }
 
         stat_element.appendTo(item_element);
 
         // item set effects
         stat_element = $('<div class="item-set-effects"/>');
-        stat_element.append('<strong>Set Effekt</strong>');
+        stat_element.append('<strong>Set Effects</strong>');
 
         if (typeof BDOdatabase.set_effects[item.set] !== 'undefined') {
             if (typeof BDOdatabase.set_effects[item.set].combos !== 'undefined') {
@@ -572,20 +572,20 @@
                 }
             }
         } else {
-            stat_element.append('<div>Keins!</div>');
+            stat_element.append('<div>None.</div>');
         }
 
         stat_element.appendTo(item_element);
 
         // item enhancement effects
         item_element.append('<div class="item-enhancement-effects">'+
-                                '<strong>Verbesserungs Effekt:</strong>'+
-                                '<div>' + (typeof item.enhancement_text === 'undefined' || item.enhancement_text === "" ? 'Information fehlen...' : item.enhancement_text) + '</div>'+
+                                '<strong>Enhancement Effects:</strong>'+
+                                '<div>' + (typeof item.enhancement_text === 'undefined' || item.enhancement_text === "" ? 'Info Missing..' : item.enhancement_text) + '</div>'+
                             '</div>');
 
         // item icon
         item_element.append('<div class="item-enhancement-level">'+
-                                '<strong>Verbesserungs Stufe:</strong>'+
+                                '<strong>Enhancement Level:</strong>'+
                                 '<input data-slider-min="" data-slider-max="' + getEnhancementMax(item) + '" data-slider-value="' + enhancement_level + '" class="item-enhancement-slider">'+
                             '</div>');
 
@@ -741,8 +741,7 @@
             
             $(".item-enhancement-slider").each(function(k, v) {
                 if ($(v).attr('data-slider-max') === "0") {
-                    $(v).replaceWith('<div>Keins!</div>');
-                })
+                    $(v).replaceWith('<div>None</div>');
                 } else {
                     $(v).slider({
                         tooltip_position: "bottom",
@@ -765,7 +764,7 @@
 
                         // item effects
                         var stat_element = $('<div class="item-effects"/>');
-                        stat_element.append('<strong>Item Effekt</strong>');
+                        stat_element.append('<strong>Item Effects</strong>');
 
                         if (Object.keys(item.item_effects).length > 0) {
                             for (var stat_key in item.item_effects) {
@@ -784,7 +783,7 @@
                                 }
                             }
                         } else {
-                            stat_element.append('<div>Keins!</div>');
+                            stat_element.append('<div>None.</div>');
                         }
 
                         itemPlate.find('.item-effects').replaceWith(stat_element);
@@ -793,13 +792,13 @@
                         stat_element = $('<div class="item-stats"/>');
 
                         if (typeof item.ap !== 'undefined') {
-                            stat_element.append('<div>AK: ' + BDOcalculator.getItemStat(item, "ap", false, e.value.newValue) + '</div>');
+                            stat_element.append('<div>AP: ' + BDOcalculator.getItemStat(item, "ap", false, e.value.newValue) + '</div>');
                         }
                         if (typeof item.ap_min !== 'undefined') {
-                            stat_element.append('<div>AK: ' + BDOcalculator.getItemStat(item, "ap_min", false, e.value.newValue) + '~' + BDOcalculator.getItemStat(item, "ap_max", false, e.value.newValue) + '</div>');
+                            stat_element.append('<div>AP: ' + BDOcalculator.getItemStat(item, "ap_min", false, e.value.newValue) + '~' + BDOcalculator.getItemStat(item, "ap_max", false, e.value.newValue) + '</div>');
                         }
                         if (typeof item.dp !== 'undefined') {
-                            stat_element.append('<div>VK: ' + BDOcalculator.getItemStat(item, "dp", false, e.value.newValue) + '</div>');
+                            stat_element.append('<div>DP: ' + BDOcalculator.getItemStat(item, "dp", false, e.value.newValue) + '</div>');
                         }
 
                         itemPlate.find('.item-stats').replaceWith(stat_element);
@@ -887,7 +886,7 @@
             $(this).attr('title', message)
             .tooltip('fixTitle')
             .tooltip('show')
-            .attr('title', "Kopiere Link")
+            .attr('title', "Copy Link")
             .tooltip('fixTitle');
         });
         
@@ -926,7 +925,7 @@
                     .appendTo("#stat-breakdown .list");
             }
             $("<li>")
-                .html("Erhöht durch:")
+                .html("Increased by:")
                 .appendTo("#stat-breakdown .list");
             for (var item in stats.item_list) {
                 var li_base = $("<li>")
