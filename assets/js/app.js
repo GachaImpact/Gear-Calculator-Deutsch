@@ -518,7 +518,7 @@
                 }
             }
         } else {
-            stat_element.append('<div>Keins!</div>');
+            stat_element.append('<div>Keine!</div>');
         }
 
         stat_element.appendTo(item_element);
