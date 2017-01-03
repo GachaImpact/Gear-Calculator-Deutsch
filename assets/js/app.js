@@ -396,11 +396,11 @@
         }
 
         // item choose button
-        item_element.append('<button class="btn btn-sm btn-primary item-choose" data-item="' + key + '" data-itemset="gems" data-type="' + item_type + '" data-itemno="' + item_no + '">Choose</button>');
+        item_element.append('<button class="btn btn-sm btn-primary item-choose" data-item="' + key + '" data-itemset="gems" data-type="' + item_type + '" data-itemno="' + item_no + '">Auswählen</button>');
 
         // item effects
         stat_element = $('<div class="item-effects"/>');
-        stat_element.append('<strong>Item Effects</strong>');
+        stat_element.append('<strong>Item Effekt</strong>');
 
         if (Object.keys(item.item_effects).length > 0) {
             for (var stat_key in item.item_effects) {
@@ -423,7 +423,7 @@
         // incompatible
         if (item.incompatible.length > 0) {
             stat_element = $('<div class="item-effects"/>');
-            stat_element.append('<strong>It doesn\'t stack with:</strong>');
+            stat_element.append('<strong>Es stackt nicht mit:</strong>');
 
             for (var i = item.incompatible.length - 1; i >= 0; i--) {
                 stat_element.append('<div>' + item.incompatible[i] + '</div>');
@@ -482,28 +482,28 @@
         stat_element = $('<div class="item-stats"/>');
 
         if (typeof item.ap !== 'undefined') {
-            stat_element.append('<div>AP: ' + BDOcalculator.getItemStat(item, "ap", false, enhancement_level) + '</div>');
+            stat_element.append('<div>AK: ' + BDOcalculator.getItemStat(item, "ap", false, enhancement_level) + '</div>');
         }
         if (typeof item.ap_min !== 'undefined') {
-            stat_element.append('<div>AP: ' + BDOcalculator.getItemStat(item, "ap_min", false, enhancement_level) + '~' + BDOcalculator.getItemStat(item, "ap_max", false, enhancement_level) + '</div>');
+            stat_element.append('<div>AK: ' + BDOcalculator.getItemStat(item, "ap_min", false, enhancement_level) + '~' + BDOcalculator.getItemStat(item, "ap_max", false, enhancement_level) + '</div>');
         }
         if (typeof item.dp !== 'undefined') {
-            stat_element.append('<div>DP: ' + BDOcalculator.getItemStat(item, "dp", false, enhancement_level) + '</div>');
+            stat_element.append('<div>VK: ' + BDOcalculator.getItemStat(item, "dp", false, enhancement_level) + '</div>');
         }
         stat_element.appendTo(item_element);
 
         // item choose button
-        item_element.append('<button class="btn btn-sm btn-primary item-choose" data-enh="' + enhancement_level + '" data-item="' + key + '" data-itemset="' + item_itemset + '" data-type="' + item_type + '" data-itemno="' + item_no + '">Choose</button>');
+        item_element.append('<button class="btn btn-sm btn-primary item-choose" data-enh="' + enhancement_level + '" data-item="' + key + '" data-itemset="' + item_itemset + '" data-type="' + item_type + '" data-itemno="' + item_no + '">Auswählen</button>');
 
         // item gems
         item_element.append('<div class="item-gems">'+
-                                '<strong>Gem Slots:</strong>'+
+                                '<strong>Kristall slots:</strong>'+
                                 '<div>' + item.gems + '</div>'+
                             '</div>');
 
         // item effects
         stat_element = $('<div class="item-effects"/>');
-        stat_element.append('<strong>Item Effects</strong>');
+        stat_element.append('<strong>Gegenstands Effekt</strong>');
 
         if (Object.keys(item.item_effects).length > 0) {
             for (var stat_key in item.item_effects) {
@@ -525,7 +525,7 @@
 
         // item set effects
         stat_element = $('<div class="item-set-effects"/>');
-        stat_element.append('<strong>Set Effects</strong>');
+        stat_element.append('<strong>Set Effekt</strong>');
 
         if (typeof BDOdatabase.set_effects[item.set] !== 'undefined') {
             if (typeof BDOdatabase.set_effects[item.set].combos !== 'undefined') {
@@ -579,13 +579,13 @@
 
         // item enhancement effects
         item_element.append('<div class="item-enhancement-effects">'+
-                                '<strong>Enhancement Effects:</strong>'+
-                                '<div>' + (typeof item.enhancement_text === 'undefined' || item.enhancement_text === "" ? 'Info Missing..' : item.enhancement_text) + '</div>'+
+                                '<strong>Verbesserungs Effekt:</strong>'+
+                                '<div>' + (typeof item.enhancement_text === 'undefined' || item.enhancement_text === "" ? 'Information fehlen...' : item.enhancement_text) + '</div>'+
                             '</div>');
 
         // item icon
         item_element.append('<div class="item-enhancement-level">'+
-                                '<strong>Enhancement Level:</strong>'+
+                                '<strong>Verbesserungs Stufe:</strong>'+
                                 '<input data-slider-min="" data-slider-max="' + getEnhancementMax(item) + '" data-slider-value="' + enhancement_level + '" class="item-enhancement-slider">'+
                             '</div>');
 
@@ -886,7 +886,7 @@
             $(this).attr('title', message)
             .tooltip('fixTitle')
             .tooltip('show')
-            .attr('title', "Copy Link")
+            .attr('title', "Kopiere Link")
             .tooltip('fixTitle');
         });
         
