@@ -742,8 +742,6 @@
             $(".item-enhancement-slider").each(function(k, v) {
                 if ($(v).attr('data-slider-max') === "0") {
                     $(v).replaceWith('<div>Keins!</div>');
-						.css({
-						'color': Red
                 })
                 } else {
                     $(v).slider({
