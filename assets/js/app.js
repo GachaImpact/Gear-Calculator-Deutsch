@@ -415,7 +415,7 @@
                 }
             }
         } else {
-            stat_element.append('<div>Keins.</div>');
+            stat_element.append('<div>Keins!</div>');
         }
 
         stat_element.appendTo(item_element);
@@ -518,7 +518,7 @@
                 }
             }
         } else {
-            stat_element.append('<div>Keins.</div>');
+            stat_element.append('<div>Keins!</div>');
         }
 
         stat_element.appendTo(item_element);
@@ -572,7 +572,7 @@
                 }
             }
         } else {
-            stat_element.append('<div>Keins.</div>');
+            stat_element.append('<div>Keins!</div>');
         }
 
         stat_element.appendTo(item_element);
@@ -741,7 +741,10 @@
             
             $(".item-enhancement-slider").each(function(k, v) {
                 if ($(v).attr('data-slider-max') === "0") {
-                    $(v).replaceWith('<div>ttttttttttttttttttttNone</div>');
+                    $(v).replaceWith('<div>Keins!</div>');
+						.css({
+						'color': Red
+                })
                 } else {
                     $(v).slider({
                         tooltip_position: "bottom",
@@ -783,7 +786,7 @@
                                 }
                             }
                         } else {
-                            stat_element.append('<div>Keins.</div>');
+                            stat_element.append('<div>Keins!</div>');
                         }
 
                         itemPlate.find('.item-effects').replaceWith(stat_element);
