@@ -580,7 +580,7 @@
         // item enhancement effects
         item_element.append('<div class="item-enhancement-effects">'+
                                 '<strong>Verbesserungs Effekt:</strong>'+
-                                '<div>' + (typeof item.enhancement_text === 'undefined' || item.enhancement_text === "" ? 'Info Missing..' : item.enhancement_text) + '</div>'+
+                                '<div>' + (typeof item.enhancement_text === 'undefined' || item.enhancement_text === "" ? 'Informationen fehlen...' : item.enhancement_text) + '</div>'+
                             '</div>');
 
         // item icon
