@@ -579,7 +579,7 @@
 
         // item enhancement effects
         item_element.append('<div class="item-enhancement-effects">'+
-                                '<strong>Verbesserungs Effekt:</strong>'+
+                                '<strong>Verstärkungseffekt:</strong>'+
                                 '<div>' + (typeof item.enhancement_text === 'undefined' || item.enhancement_text === "" ? 'Informationen fehlen...' : item.enhancement_text) + '</div>'+
                             '</div>');
 
