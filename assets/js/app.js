@@ -1,6 +1,6 @@
 /*
-* @Author: https://github.com/Shadowtrance/BDO-Gear-Calculator
-* @http: https://shadowtrance.github.io/
+* @Author: https://github.com/KominoStyle/Gear-Calculator-Deutsch
+* @http: https://KominoStyle.github.io/
 */
 
 (function ($) {
@@ -269,11 +269,11 @@
     function resetGearslotItem(item_type, item_no) {
         $("#equipment .gear-slot[data-type='" + item_type + "']" + (typeof item_no === 'undefined' ? '' : "[data-item='" + item_no + "']")).attr({
             'style': '',
-            'title': "Empty"
+            'title': "Leer"
         }).empty().tooltip('fixTitle');
         $('#equipment .gem-slot.' + item_type + '1, .gem-slot.' + item_type + '2').attr({
             'style': '',
-            'title': "Empty"
+            'title': "Leer"
         }).tooltip('fixTitle').hide();
     }
 
@@ -415,7 +415,7 @@
                 }
             }
         } else {
-            stat_element.append('<div>None.</div>');
+            stat_element.append('<div>Keins.</div>');
         }
 
         stat_element.appendTo(item_element);
@@ -518,7 +518,7 @@
                 }
             }
         } else {
-            stat_element.append('<div>None.</div>');
+            stat_element.append('<div>Keins.</div>');
         }
 
         stat_element.appendTo(item_element);
@@ -572,7 +572,7 @@
                 }
             }
         } else {
-            stat_element.append('<div>None.</div>');
+            stat_element.append('<div>Keins.</div>');
         }
 
         stat_element.appendTo(item_element);
@@ -741,7 +741,7 @@
             
             $(".item-enhancement-slider").each(function(k, v) {
                 if ($(v).attr('data-slider-max') === "0") {
-                    $(v).replaceWith('<div>None</div>');
+                    $(v).replaceWith('<div>ttttttttttttttttttttNone</div>');
                 } else {
                     $(v).slider({
                         tooltip_position: "bottom",
@@ -764,7 +764,7 @@
 
                         // item effects
                         var stat_element = $('<div class="item-effects"/>');
-                        stat_element.append('<strong>Item Effects</strong>');
+                        stat_element.append('<strong>Item Effekt</strong>');
 
                         if (Object.keys(item.item_effects).length > 0) {
                             for (var stat_key in item.item_effects) {
@@ -783,7 +783,7 @@
                                 }
                             }
                         } else {
-                            stat_element.append('<div>None.</div>');
+                            stat_element.append('<div>Keins.</div>');
                         }
 
                         itemPlate.find('.item-effects').replaceWith(stat_element);
@@ -792,13 +792,13 @@
                         stat_element = $('<div class="item-stats"/>');
 
                         if (typeof item.ap !== 'undefined') {
-                            stat_element.append('<div>AP: ' + BDOcalculator.getItemStat(item, "ap", false, e.value.newValue) + '</div>');
+                            stat_element.append('<div>AK: ' + BDOcalculator.getItemStat(item, "ap", false, e.value.newValue) + '</div>');
                         }
                         if (typeof item.ap_min !== 'undefined') {
-                            stat_element.append('<div>AP: ' + BDOcalculator.getItemStat(item, "ap_min", false, e.value.newValue) + '~' + BDOcalculator.getItemStat(item, "ap_max", false, e.value.newValue) + '</div>');
+                            stat_element.append('<div>AK: ' + BDOcalculator.getItemStat(item, "ap_min", false, e.value.newValue) + '~' + BDOcalculator.getItemStat(item, "ap_max", false, e.value.newValue) + '</div>');
                         }
                         if (typeof item.dp !== 'undefined') {
-                            stat_element.append('<div>DP: ' + BDOcalculator.getItemStat(item, "dp", false, e.value.newValue) + '</div>');
+                            stat_element.append('<div>VK: ' + BDOcalculator.getItemStat(item, "dp", false, e.value.newValue) + '</div>');
                         }
 
                         itemPlate.find('.item-stats').replaceWith(stat_element);
@@ -833,7 +833,7 @@
                 }
                 
                 // If searching, input isn't blank and the search wasn't matched in the items name, then skip the item
-                if (search !== "" && key.toLowerCase().indexOf(search) == -1) {
+                if (search !== "Suchen" && key.toLowerCase().indexOf(search) == -1) {
                     continue;
                 }
                 if (!rarityFilters[items_list[key].rarity]) {
@@ -925,7 +925,7 @@
                     .appendTo("#stat-breakdown .list");
             }
             $("<li>")
-                .html("Increased by:")
+                .html("Erhöht durch:")
                 .appendTo("#stat-breakdown .list");
             for (var item in stats.item_list) {
                 var li_base = $("<li>")
